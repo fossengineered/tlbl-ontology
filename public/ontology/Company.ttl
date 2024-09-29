@@ -25,15 +25,3 @@
     rdfs:range xsd:string ;
     rdfs:label "Industry" ;
     rdfs:comment "The industry in which the company operates." .
-
-:Revenue a rdf:Property ;
-    rdfs:domain :Company ;
-    rdfs:range xsd:float ;
-    rdfs:label "Revenue" ;
-    rdfs:comment "The annual revenue of the company." .
-
-:hasContact a rdf:Property ;  // New property to link to contacts
-    rdfs:domain :Company ;
-    rdfs:range :Contact ;  // Assuming Contact is defined elsewhere
-    rdfs:label "hasContact" ;
-    rdfs:comment "A contact associated with the company." .

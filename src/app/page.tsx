@@ -16,19 +16,16 @@ export default function OntologyViewer() {
       Name: "Example Corp",
       Founded: "2000-01-01",
       Industry: "Technology",
-      Revenue: 1000000.00,
-      hasContact: {
-        FirstName: "John",
-        LastName: "Doe",
-        Email: "john.doe@example.com",
-        Phone: "123-456-7890",
-      },
     },
     Contact: {
       FirstName: "Jane",
       LastName: "Smith",
       Email: "jane.smith@example.com",
       Phone: "098-765-4321",
+      worksFor: [
+        "http://example.org/ontology/Company#ExampleCorp", // URI for Example Corp
+        "http://example.org/ontology/Company#AnotherCompany" // URI for Another Company
+      ], // Example of a contact working for multiple companies using URIs
     },
   };
 
@@ -56,6 +53,17 @@ export default function OntologyViewer() {
       {/* Right side - Entity Details */}
       <div className="w-full p-4"> {/* Changed to w-full to take remaining space */}
         <h2 className="text-2xl font-bold mb-2">{selectedEntity.name}</h2>
+        {/* Link to the corresponding .ttl file */}
+        <div className="mb-2">
+          <a
+            href={`/ontology/${selectedEntity.name}.ttl`}
+            className="text-blue-500"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View {selectedEntity.name} TTL File
+          </a>
+        </div>
         <Separator className="my-2" />
 
         {/* Tabs for Sample Data and Entity Description */}

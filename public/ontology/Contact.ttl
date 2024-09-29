@@ -21,3 +21,9 @@
 :Phone a rdf:Property ;
     rdfs:domain :Contact ;
     rdfs:range xsd:string .
+
+:associatedWith a rdf:Property ;  // New property to link contacts to companies
+    rdfs:domain :Contact ;
+    rdfs:range :Company ;  
+    rdfs:label "associatedWith" ;
+    rdfs:comment "A company that the contact is associa with." .
