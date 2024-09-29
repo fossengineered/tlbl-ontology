@@ -1,0 +1,39 @@
+@prefix : <http://example.org/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+:Company a owl:Class ;  
+    rdfs:label "Company" ;
+    rdfs:comment "An entity representing a company." .
+
+:Name a rdf:Property ;
+    rdfs:domain :Company ;
+    rdfs:range xsd:string ;
+    rdfs:label "Name" ;
+    rdfs:comment "The name of the company." .
+
+:Founded a rdf:Property ;
+    rdfs:domain :Company ;
+    rdfs:range xsd:date ;
+    rdfs:label "Founded" ;
+    rdfs:comment "The date the company was founded." .
+
+:Industry a rdf:Property ;
+    rdfs:domain :Company ;
+    rdfs:range xsd:string ;
+    rdfs:label "Industry" ;
+    rdfs:comment "The industry in which the company operates." .
+
+:Revenue a rdf:Property ;
+    rdfs:domain :Company ;
+    rdfs:range xsd:float ;
+    rdfs:label "Revenue" ;
+    rdfs:comment "The annual revenue of the company." .
+
+:hasContact a rdf:Property ;  // New property to link to contacts
+    rdfs:domain :Company ;
+    rdfs:range :Contact ;  // Assuming Contact is defined elsewhere
+    rdfs:label "hasContact" ;
+    rdfs:comment "A contact associated with the company." .
